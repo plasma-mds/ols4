@@ -54,7 +54,8 @@ public class DefinitionAnnotator {
 						if (value.getType() == PropertyValue.Type.LITERAL ) {
 							listOfValues.add((PropertyValueLiteral) value);
 						} else
-							throw new RuntimeException("Unexpected PropertyValue type = " + value.getType());
+							throw new RuntimeException("Unexpected PropertyValue type = " + value.getType() + " for "
+									+ c.uri + " ontology " + graph.config.get("ontology_purl"));
 					}
 				}
 			}
