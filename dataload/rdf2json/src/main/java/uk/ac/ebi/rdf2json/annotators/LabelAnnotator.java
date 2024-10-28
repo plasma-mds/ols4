@@ -59,10 +59,21 @@ public class LabelAnnotator {
                 List<PropertyValue> values = c.properties.getPropertyValues(prop);
                 if(values != null) {
                     for(PropertyValue value : values) {
-                        labels.add((PropertyValueLiteral) value);
-                        if(!isNonEnglishValue(graph, value))
-                            hasEnglishValue = true;
+                        if (value.getType() == PropertyValue.Type.LITERAL) {
+                            labels.add((PropertyValueLiteral) value);
+                            if (!isNonEnglishValue(graph, value))
+                                hasEnglishValue = true;
+                        } else if (value.getType() == PropertyValue.Type.LIST) {
+                            for (PropertyValue propertyValue: ((PropertyValueList)value).getPropertyValues()) {
+                                if (propertyValue.getType() == PropertyValue.Type.LITERAL) {
+                                    labels.add((PropertyValueLiteral) propertyValue);
+                                    if (!isNonEnglishValue(graph, propertyValue))
+                                        hasEnglishValue = true;
+                                }
+                            }
+                        }
                     }
+
                 }
             }
 
@@ -71,7 +82,16 @@ public class LabelAnnotator {
                     List<PropertyValue> values = c.properties.getPropertyValues(prop);
                     if (values != null) {
                         for (PropertyValue value : values) {
-                            labels.add((PropertyValueLiteral) value);
+                            if (value.getType() == PropertyValue.Type.LITERAL) {
+                                labels.add((PropertyValueLiteral) value);
+                            } else if (value.getType() == PropertyValue.Type.LIST) {
+                                for (PropertyValue propertyValue: ((PropertyValueList)value).getPropertyValues()) {
+                                    if (propertyValue.getType() == PropertyValue.Type.LITERAL) {
+                                        labels.add((PropertyValueLiteral) propertyValue);
+                                    }
+                                }
+
+                            }
                         }
                     }
                 }

@@ -46,16 +46,12 @@ public class DefinitionAnnotator {
 			if(c.uri == null)
 				continue;
 
-			List<PropertyValueLiteral> listOfValues = new ArrayList<>();
+			List<PropertyValue> listOfValues = new ArrayList<>();
 			for(String prop : sourceProps) {
 				List<PropertyValue> values = c.properties.getPropertyValues(prop);
 				if(values != null) {
 					for(PropertyValue value : values) {
-						if (value.getType() == PropertyValue.Type.LITERAL ) {
-							listOfValues.add((PropertyValueLiteral) value);
-						} else
-							throw new RuntimeException("Unexpected PropertyValue type = " + value.getType() + " for "
-									+ c.uri + " ontology " + graph.config.get("ontology_purl"));
+						listOfValues.add(value);
 					}
 				}
 			}
