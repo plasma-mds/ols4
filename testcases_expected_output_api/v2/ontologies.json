@@ -167,7 +167,7 @@
     "language": "en",
     "linkedEntities": {
       "http://exmpl.org/xmpl/Preferred_name": {
-        "curie": "XMPL_Preferred_name",
+        "curie": "XMPL:Preferred_name",
         "definedBy": [
           "xmpl"
         ],
@@ -604,7 +604,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/ms#part_of": {
-        "curie": "part_of",
+        "curie": "part:of",
         "hasLocalDefinition": true,
         "label": "part_of",
         "numAppearsIn": 1.0,

@@ -155,7 +155,7 @@
             "type": [
               "literal"
             ],
-            "value": "cell_part"
+            "value": "cell:part"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -260,7 +260,7 @@
             "type": [
               "literal"
             ],
-            "value": "part_of"
+            "value": "part:of"
           },
           "directAncestor": [],
           "hasDirectChildren": false,

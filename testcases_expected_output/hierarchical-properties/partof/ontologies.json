@@ -501,7 +501,7 @@
             "type": [
               "literal"
             ],
-            "value": "part_of"
+            "value": "part:of"
           },
           "directAncestor": [],
           "hasDirectChildren": false,

@@ -19805,7 +19805,7 @@
     "appearsIn": [
       "gitissue502"
     ],
-    "curie": "excluded_subClassOf",
+    "curie": "excluded:subClassOf",
     "hasDirectChildren": false,
     "hasDirectParents": false,
     "hasHierarchicalChildren": false,
@@ -19895,7 +19895,7 @@
     "appearsIn": [
       "gitissue502"
     ],
-    "curie": "should_conform_to",
+    "curie": "should:conform_to",
     "hasDirectChildren": false,
     "hasDirectParents": false,
     "hasHierarchicalChildren": false,

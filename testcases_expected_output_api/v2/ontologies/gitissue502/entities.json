@@ -24409,7 +24409,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -27556,7 +27556,7 @@
         "url": "http://purl.obolibrary.org/obo/NCIT_C26836"
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -28234,7 +28234,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -30784,7 +30784,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -34944,7 +34944,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#should_conform_to": {
-        "curie": "should_conform_to",
+        "curie": "should:conform_to",
         "hasLocalDefinition": true,
         "label": "should_conform_to",
         "numAppearsIn": 1.0,
@@ -35855,7 +35855,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -37210,7 +37210,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -41052,7 +41052,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf": {
-        "curie": "excluded_subClassOf",
+        "curie": "excluded:subClassOf",
         "hasLocalDefinition": true,
         "label": "excluded_subClassOf",
         "numAppearsIn": 1.0,
@@ -83602,7 +83602,7 @@
     "appearsIn": [
       "gitissue502"
     ],
-    "curie": "excluded_subClassOf",
+    "curie": "excluded:subClassOf",
     "hasDirectChildren": false,
     "hasDirectParents": false,
     "hasHierarchicalChildren": false,
@@ -83692,7 +83692,7 @@
     "appearsIn": [
       "gitissue502"
     ],
-    "curie": "should_conform_to",
+    "curie": "should:conform_to",
     "hasDirectChildren": false,
     "hasDirectParents": false,
     "hasHierarchicalChildren": false,

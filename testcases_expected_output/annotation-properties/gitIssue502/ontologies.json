@@ -78852,7 +78852,7 @@
             "type": [
               "literal"
             ],
-            "value": "excluded_subClassOf"
+            "value": "excluded:subClassOf"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -78908,7 +78908,7 @@
             "type": [
               "literal"
             ],
-            "value": "should_conform_to"
+            "value": "should:conform_to"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
