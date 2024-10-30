@@ -241,7 +241,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "XMPL_Preferred_name"
+                "value": "XMPL:Preferred_name"
               },
               "type": [
                 "property",
@@ -431,7 +431,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "XMPL_Preferred_name"
+                "value": "XMPL:Preferred_name"
               },
               "type": [
                 "property",
@@ -714,7 +714,7 @@
             "type": [
               "literal"
             ],
-            "value": "XMPL_Preferred_name"
+            "value": "XMPL:Preferred_name"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -852,7 +852,7 @@
             "type": [
               "literal"
             ],
-            "value": "XMPL_Preferred_name"
+            "value": "XMPL:Preferred_name"
           },
           "type": [
             "property",

@@ -37,7 +37,7 @@
     "appearsIn": [
       "partof"
     ],
-    "curie": "part_of",
+    "curie": "part:of",
     "hasDirectChildren": false,
     "hasDirectParents": false,
     "hasHierarchicalChildren": false,

@@ -3,7 +3,7 @@
     "appearsIn": [
       "xmpl"
     ],
-    "curie": "XMPL_Preferred_name",
+    "curie": "XMPL:Preferred_name",
     "definedBy": [
       "xmpl"
     ],
@@ -37,7 +37,7 @@
     "appearsIn": [
       "xmpl"
     ],
-    "curie": "XMPL_Synonym",
+    "curie": "XMPL:Synonym",
     "definedBy": [
       "xmpl"
     ],
