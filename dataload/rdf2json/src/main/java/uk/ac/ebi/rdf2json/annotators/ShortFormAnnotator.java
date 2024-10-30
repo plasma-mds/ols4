@@ -37,7 +37,7 @@ public class ShortFormAnnotator {
 			}
 
 			String shortForm = extractShortForm(graph, ontologyBaseUris, preferredPrefix, c.uri);
-
+          
 			/*
 			CURIEs are formed by following rules:
 			If there is only one underscore "_" AND the characters before the underscore are PreferredPrefix then replace the underscore with colon ":"
@@ -71,6 +71,8 @@ public class ShortFormAnnotator {
 	}
 		long endTime3 = System.nanoTime();
 		logger.info("annotate short forms: {}", ((endTime3 - startTime3) / 1000 / 1000 / 1000));
+
+
 	}
 	
 	private static String extractShortForm(OntologyGraph graph, Set<String> ontologyBaseUris, String preferredPrefix,

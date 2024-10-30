@@ -63,10 +63,13 @@ public class RecursiveJsonDiff {
                 continue;
             }
 
-            if(!jsonA.equals(jsonB)) {
+            if(jsonA.equals(jsonB)) {
+                System.out.println(inputDir + filename + " was equal to " + expectedDir + filename);
+            } else {
                 System.out.println(inputDir + filename + " differed from " + expectedDir + filename);
                 success = false;
             }
+
         }
 
         return success;

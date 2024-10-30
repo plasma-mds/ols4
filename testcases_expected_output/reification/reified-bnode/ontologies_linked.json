@@ -164,7 +164,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "part_of"
+                "value": "part:of"
               },
               "type": [
                 "property",
@@ -185,7 +185,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "cell_part"
+                "value": "cell:part"
               },
               "type": [
                 "class",
@@ -204,7 +204,7 @@
             "type": [
               "literal"
             ],
-            "value": "cell_part"
+            "value": "cell:part"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -313,7 +313,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "part_of"
+                "value": "part:of"
               },
               "type": [
                 "property",
@@ -356,7 +356,7 @@
             "type": [
               "literal"
             ],
-            "value": "part_of"
+            "value": "part:of"
           },
           "directAncestor": [],
           "hasDirectChildren": false,

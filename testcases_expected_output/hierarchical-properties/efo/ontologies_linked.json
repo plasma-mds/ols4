@@ -8754,7 +8754,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "EFO_URI"
+                "value": "EFO:URI"
               },
               "type": [
                 "property",
@@ -9115,7 +9115,7 @@
                 "type": [
                   "literal"
                 ],
-                "value": "EFO_URI"
+                "value": "EFO:URI"
               },
               "type": [
                 "property",
@@ -10234,7 +10234,7 @@
             "type": [
               "literal"
             ],
-            "value": "EFO_URI"
+            "value": "EFO:URI"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -10295,7 +10295,7 @@
             "type": [
               "literal"
             ],
-            "value": "date_retrieved"
+            "value": "date:retrieved"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -10356,7 +10356,7 @@
             "type": [
               "literal"
             ],
-            "value": "external_class"
+            "value": "external:class"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -10417,7 +10417,7 @@
             "type": [
               "literal"
             ],
-            "value": "external_ontology"
+            "value": "external:ontology"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
@@ -11271,7 +11271,7 @@
             "type": [
               "literal"
             ],
-            "value": "depicted_by"
+            "value": "depicted:by"
           },
           "directAncestor": [],
           "hasDirectChildren": false,
