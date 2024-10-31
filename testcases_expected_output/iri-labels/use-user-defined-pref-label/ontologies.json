@@ -495,7 +495,7 @@
             "type": [
               "literal"
             ],
-            "value": "XMPL:Preferred_name"
+            "value": "XMPL_Preferred_name"
           },
           "directAncestor": [],
           "hasDirectChildren": false,

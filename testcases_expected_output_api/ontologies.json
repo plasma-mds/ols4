@@ -586,6 +586,100 @@
   {
     "_links": {
       "individuals": {
+        "href": "<base>/api/ontologies/max-cardinality-ttl/individuals"
+      },
+      "properties": {
+        "href": "<base>/api/ontologies/max-cardinality-ttl/properties"
+      },
+      "self": {
+        "href": "<base>/api/ontologies/max-cardinality-ttl?lang=en"
+      },
+      "terms": {
+        "href": "<base>/api/ontologies/max-cardinality-ttl/terms"
+      }
+    },
+    "baseUris": [],
+    "config": {
+      "allowDownload": false,
+      "baseUris": [],
+      "creators": [],
+      "definitionProperties": [],
+      "fileLocation": "./testcases/class-expression-issues/max-cardinality.ttl",
+      "hiddenProperties": [],
+      "hierarchicalProperties": [],
+      "id": "max-cardinality-ttl",
+      "isSkos": false,
+      "labelProperty": "http://www.w3.org/2000/01/rdf-schema#label",
+      "namespace": "max-cardinality-ttl",
+      "oboSlims": false,
+      "preferredPrefix": "max-cardinality-ttl",
+      "preferredRootTerms": [],
+      "synonymProperties": []
+    },
+    "lang": "en",
+    "languages": [
+      "en"
+    ],
+    "loadAttempts": 0,
+    "loaded": "<loaded>",
+    "message": "",
+    "numberOfIndividuals": 0,
+    "numberOfProperties": 1,
+    "numberOfTerms": 1,
+    "ontologyId": "max-cardinality-ttl",
+    "status": "LOADED",
+    "updated": "<updated>"
+  },
+  {
+    "_links": {
+      "individuals": {
+        "href": "<base>/api/ontologies/max-cardinality/individuals"
+      },
+      "properties": {
+        "href": "<base>/api/ontologies/max-cardinality/properties"
+      },
+      "self": {
+        "href": "<base>/api/ontologies/max-cardinality?lang=en"
+      },
+      "terms": {
+        "href": "<base>/api/ontologies/max-cardinality/terms"
+      }
+    },
+    "baseUris": [],
+    "config": {
+      "allowDownload": false,
+      "baseUris": [],
+      "creators": [],
+      "definitionProperties": [],
+      "fileLocation": "./testcases/class-expression-issues/max-cardinality.owl",
+      "hiddenProperties": [],
+      "hierarchicalProperties": [],
+      "id": "max-cardinality",
+      "isSkos": false,
+      "labelProperty": "http://www.w3.org/2000/01/rdf-schema#label",
+      "namespace": "max-cardinality",
+      "oboSlims": false,
+      "preferredPrefix": "max-cardinality",
+      "preferredRootTerms": [],
+      "synonymProperties": []
+    },
+    "lang": "en",
+    "languages": [
+      "en"
+    ],
+    "loadAttempts": 0,
+    "loaded": "<loaded>",
+    "message": "",
+    "numberOfIndividuals": 0,
+    "numberOfProperties": 1,
+    "numberOfTerms": 1,
+    "ontologyId": "max-cardinality",
+    "status": "LOADED",
+    "updated": "<updated>"
+  },
+  {
+    "_links": {
+      "individuals": {
         "href": "<base>/api/ontologies/oio/individuals"
       },
       "properties": {

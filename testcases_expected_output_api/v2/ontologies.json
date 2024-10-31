@@ -153,72 +153,6 @@
   },
   {
     "base_uri": [
-      "http://exmpl.org/xmpl/"
-    ],
-    "description": "This config will use the defined label_property as label for a class. In OLS4 the value of label_property is a collection.",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Ontology",
-    "imported": false,
-    "iri": "http://exmpl.org/xmpl/xmpl.owl",
-    "isObsolete": false,
-    "label_property": [
-      "http://exmpl.org/xmpl/Other_preferred_name",
-      "http://exmpl.org/xmpl/Preferred_name"
-    ],
-    "language": "en",
-    "linkedEntities": {
-      "http://exmpl.org/xmpl/Preferred_name": {
-        "curie": "XMPL:Preferred_name",
-        "definedBy": [
-          "xmpl"
-        ],
-        "hasLocalDefinition": true,
-        "label": "XMPL_Preferred_name",
-        "numAppearsIn": 1.0,
-        "type": [
-          "annotationProperty",
-          "entity",
-          "property"
-        ]
-      },
-      "http://exmpl.org/xmpl/Synonym": {
-        "curie": "XMPL:Synonym",
-        "definedBy": [
-          "xmpl"
-        ],
-        "hasLocalDefinition": true,
-        "label": "XMPL_Synonym",
-        "numAppearsIn": 1.0,
-        "type": [
-          "annotationProperty",
-          "entity",
-          "property"
-        ]
-      }
-    },
-    "numDescendants": 0.0,
-    "numHierarchicalDescendants": 0.0,
-    "numberOfClasses": "3",
-    "numberOfEntities": "5",
-    "numberOfIndividuals": "0",
-    "numberOfProperties": "2",
-    "ontologyId": "xmpl",
-    "ontology_purl": "./testcases/iri-labels/user-defined-pref-label.owl",
-    "preferredPrefix": "XMPL",
-    "reasoner": "none",
-    "searchableAnnotationValues": [
-      false
-    ],
-    "synonym_property": [
-      "http://exmpl.org/xmpl/Synonym"
-    ],
-    "title": "Example terminology with user defined pref label",
-    "type": [
-      "ontology"
-    ],
-    "uri": "http://exmpl.org/xmpl/"
-  },
-  {
-    "base_uri": [
       "http://www.geneontology.org/formats/oboInOwl#"
     ],
     "definition": [
@@ -604,7 +538,7 @@
         ]
       },
       "http://purl.obolibrary.org/obo/ms#part_of": {
-        "curie": "part:of",
+        "curie": "part_of",
         "hasLocalDefinition": true,
         "label": "part_of",
         "numAppearsIn": 1.0,
@@ -722,30 +656,6 @@
     "ontologyId": "isobsoletesimple",
     "ontology_purl": "./testcases/defined-fields/IsObsoleteSimple.rdf",
     "preferredPrefix": "IsObsoleteSimple",
-    "searchableAnnotationValues": [
-      false
-    ],
-    "type": [
-      "ontology"
-    ]
-  },
-  {
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Ontology",
-    "http://www.w3.org/2002/07/owl#versionIRI": "http://www.ebi.ac.uk/testcases/individuals/v.0.0.1/anonymous-types-with-inverse.owl",
-    "imported": false,
-    "iri": "http://www.ebi.ac.uk/testcases/individuals/anonymous-types-with-inverse.owl",
-    "isObsolete": false,
-    "language": "en",
-    "linkedEntities": {},
-    "numDescendants": 0.0,
-    "numHierarchicalDescendants": 0.0,
-    "numberOfClasses": "1",
-    "numberOfEntities": "4",
-    "numberOfIndividuals": "1",
-    "numberOfProperties": "2",
-    "ontologyId": "individuals-anonymous-types-with-inverse",
-    "ontology_purl": "./testcases/individuals/anonymous-types-with-inverse.owl",
-    "preferredPrefix": "individuals-anonymous-types-with-inverse",
     "searchableAnnotationValues": [
       false
     ],
@@ -893,6 +803,52 @@
     "ontologyId": "genepio",
     "ontology_purl": "./testcases/datatypes/nesting-issue/minimal-genepio.owl",
     "preferredPrefix": "genepio",
+    "searchableAnnotationValues": [
+      false
+    ],
+    "type": [
+      "ontology"
+    ]
+  },
+  {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Ontology",
+    "imported": false,
+    "iri": "http://www.ebi.ac.uk/testcases/class-expression-issues/maxCardinality.owl",
+    "isObsolete": false,
+    "language": "en",
+    "linkedEntities": {},
+    "numDescendants": 0.0,
+    "numHierarchicalDescendants": 0.0,
+    "numberOfClasses": "1",
+    "numberOfEntities": "2",
+    "numberOfIndividuals": "0",
+    "numberOfProperties": "1",
+    "ontologyId": "max-cardinality",
+    "ontology_purl": "./testcases/class-expression-issues/max-cardinality.owl",
+    "preferredPrefix": "max-cardinality",
+    "searchableAnnotationValues": [
+      false
+    ],
+    "type": [
+      "ontology"
+    ]
+  },
+  {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2002/07/owl#Ontology",
+    "imported": false,
+    "iri": "http://www.ebi.ac.uk/testcases/class-expression-issues/maxCardinality.owl",
+    "isObsolete": false,
+    "language": "en",
+    "linkedEntities": {},
+    "numDescendants": 0.0,
+    "numHierarchicalDescendants": 0.0,
+    "numberOfClasses": "1",
+    "numberOfEntities": "2",
+    "numberOfIndividuals": "0",
+    "numberOfProperties": "1",
+    "ontologyId": "max-cardinality-ttl",
+    "ontology_purl": "./testcases/class-expression-issues/max-cardinality.ttl",
+    "preferredPrefix": "max-cardinality-ttl",
     "searchableAnnotationValues": [
       false
     ],
