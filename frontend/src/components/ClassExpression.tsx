@@ -160,7 +160,7 @@ export default function ClassExpression({
       </span>,
     ];
 
-    for (const subExpr of oneOf) {
+    for (let subExpr of oneOf) {
       if (nodes.length > 1) {
         nodes.push(
           <span key={randomString()} className="text-neutral-default">
@@ -168,6 +168,11 @@ export default function ClassExpression({
           </span>
         );
       }
+
+      if (typeof subExpr === "number") {
+          subExpr = subExpr.toString();
+      }
+
       nodes.push(
         <ClassExpression
           key={randomString()}
