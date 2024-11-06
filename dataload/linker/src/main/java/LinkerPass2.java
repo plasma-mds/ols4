@@ -342,7 +342,7 @@ public class LinkerPass2 {
 		if(definitions.definingOntologyIds.size() == 1) {
 
 			// ...and is only defined in ONE ontology. Therefore that ontology is the canonical defining ontology as far as OLS is concerned
-			jsonWriter.name(DEFINITION.getText());
+			jsonWriter.name(DEFINED_BY.getText());
 			jsonWriter.beginArray();
 			jsonWriter.value(definitions.definingOntologyIds.iterator().next());
 			jsonWriter.endArray();
