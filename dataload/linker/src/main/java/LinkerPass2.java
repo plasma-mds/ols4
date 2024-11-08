@@ -169,6 +169,7 @@ public class LinkerPass2 {
                 if(name == "curie") {
                     if(curie != null) {
                         // use the defining ontology curie
+                        jsonReader.skipValue();
                         jsonWriter.value(curie);
                     } else {
                         // fallthrough to using the curie from rdf2json
