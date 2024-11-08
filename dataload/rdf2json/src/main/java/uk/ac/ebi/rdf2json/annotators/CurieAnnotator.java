@@ -10,10 +10,10 @@ import uk.ac.ebi.rdf2json.OntologyGraph;
 import uk.ac.ebi.rdf2json.annotators.helpers.OntologyBaseUris;
 import uk.ac.ebi.rdf2json.properties.PropertyValueLiteral;
 
-public class ShortFormAnnotator {
-	private static final Logger logger = LoggerFactory.getLogger(ShortFormAnnotator.class);
+public class CurieAnnotator {
+	private static final Logger logger = LoggerFactory.getLogger(CurieAnnotator.class);
 
-	public static void annotateShortForms(OntologyGraph graph) {
+	public static void annotateCuries(OntologyGraph graph) {
 
 		long startTime3 = System.nanoTime();
 
@@ -41,7 +41,7 @@ public class ShortFormAnnotator {
 		}
 	}
 		long endTime3 = System.nanoTime();
-		logger.info("annotate short forms: {}", ((endTime3 - startTime3) / 1000 / 1000 / 1000));
+		logger.info("annotate curies: {}", ((endTime3 - startTime3) / 1000 / 1000 / 1000));
 
 
 	}

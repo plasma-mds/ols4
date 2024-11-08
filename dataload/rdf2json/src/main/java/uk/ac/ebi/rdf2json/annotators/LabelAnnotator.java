@@ -37,7 +37,7 @@ public class LabelAnnotator {
     }
 
     public static void annotateLabels(OntologyGraph graph) {
-        collateProperties(graph, "label", getLabelProperties(graph), List.of("shortForm"));
+        collateProperties(graph, "label", getLabelProperties(graph), List.of("curie"));
     }
 
     private static void collateProperties(OntologyGraph graph, String destProp, Collection<String> sourceProps, Collection<String> fallbackProps) {

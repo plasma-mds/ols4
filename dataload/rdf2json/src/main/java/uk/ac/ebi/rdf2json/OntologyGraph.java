@@ -262,14 +262,14 @@ public class OntologyGraph implements StreamRDF {
         HierarchicalParentsAnnotator.annotateHierarchicalParents(this); // must run after RelatedAnnotator
         AncestorsAnnotator.annotateAncestors(this);
         HierarchyMetricsAnnotator.annotateHierarchyMetrics(this); // must run after HierarchicalParentsAnnotator
-        ShortFormAnnotator.annotateShortForms(this);
+        CurieAnnotator.annotateCuries(this);
         DefinitionAnnotator.annotateDefinitions(this);
         SynonymAnnotator.annotateSynonyms(this);
         ReifiedPropertyAnnotator.annotateReifiedProperties(this);
         OntologyMetadataAnnotator.annotateOntologyMetadata(this);
         HierarchyFlagsAnnotator.annotateHierarchyFlags(this); // must run after DirectParentsAnnotator and HierarchicalParentsAnnotator
         IsObsoleteAnnotator.annotateIsObsolete(this);
-        LabelAnnotator.annotateLabels(this); // must run after ShortFormAnnotator
+        LabelAnnotator.annotateLabels(this); // must run after CurieAnnotator
         ConfigurablePropertyAnnotator.annotateConfigurableProperties(this);
         PreferredRootsAnnotator.annotatePreferredRoots(this);
         DisjointWithAnnotator.annotateDisjointWith(this);

@@ -146,6 +146,14 @@ public class LinkerPass2 {
 
             EntityDefinitionSet defOfThisEntity = pass1Result.iriToDefinitions.get(entityIri);
 
+            String curie = null;
+            if(defOfThisEntity.definingDefinitions.size() > 0) {
+                // always use the defining ontology's curie, as the defining
+                // ontology knows the base URI and we might not
+                //
+                curie = defOfThisEntity.definingDefinitions.iterator().next().curie.getAsString();
+            }
+
             while(jsonReader.peek() != JsonToken.END_OBJECT) {
 
                 String name = jsonReader.nextName();
@@ -159,21 +167,22 @@ public class LinkerPass2 {
                 }
 
                 if(name == "curie") {
-                    if(defOfThisEntity.definingDefinitions.size() > 0) {
-                        // always use the defining ontology's curie, as the defining
-                        // ontology knows the base URI and we might not
-                        //
-                        com.google.gson.internal.Streams.write(
-                        defOfThisEntity.definingDefinitions.iterator().next().curie,
-                        jsonWriter);
-                        continue;
+                    if(curie != null) {
+                        // use the defining ontology curie
+                        jsonWriter.value(curie);
                     } else {
-                        // fallback to using the curie we already have
+                        // fallthrough to using the curie from rdf2json
+                        curie = jsonReader.nextString();
+                        jsonWriter.value(curie);
                     }
+                    continue;
                 }
 
                 CopyJsonGatheringStrings.copyJsonGatheringStrings(jsonReader, jsonWriter, stringsInEntity);
             }
+
+            jsonWriter.name("shortForm");
+            jsonWriter.value(curie.replaceFirst(":", "_"));
 
             if(defOfThisEntity != null) {
 
@@ -451,40 +460,5 @@ public class LinkerPass2 {
     private static class CurieMapResult {
         public String url;
         public String source;
-    }
-
-    private static void processShortFormObject(JsonReader jsonReader, JsonWriter jsonWriter, LinkerPass1.LinkerPass1Result pass1Result, String entityIri) throws IOException {
-        jsonReader.beginObject();
-        JsonObject shortFormObject = new JsonObject();
-
-        while (jsonReader.peek() != JsonToken.END_OBJECT) {
-            String shortFormFieldName = jsonReader.nextName();
-            if (shortFormFieldName.equals("type")) {
-                JsonArray typeArray = new JsonArray();
-                jsonReader.beginArray();
-                while (jsonReader.peek() != JsonToken.END_ARRAY) {
-                    typeArray.add(jsonReader.nextString());
-                }
-                jsonReader.endArray();
-                shortFormObject.add("type", typeArray);
-            } else if (shortFormFieldName.equals("value")) {
-                String shortFormValue = jsonReader.nextString();
-                // Modify the value attribute
-                shortFormValue = getProcessedCurieValue(pass1Result, entityIri).replace(":", "_");
-                shortFormObject.addProperty("value", shortFormValue);
-            }
-        }
-        jsonReader.endObject();
-
-        // Write the modified short form object
-        jsonWriter.beginObject();
-        jsonWriter.name("type");
-        jsonWriter.beginArray();
-        for (JsonElement typeElement : shortFormObject.getAsJsonArray("type")) {
-            jsonWriter.value(typeElement.getAsString());
-        }
-        jsonWriter.endArray();
-        jsonWriter.name("value").value(shortFormObject.get("value").getAsString());
-        jsonWriter.endObject();
     }
 }
