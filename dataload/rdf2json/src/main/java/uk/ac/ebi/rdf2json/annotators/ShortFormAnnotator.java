@@ -36,36 +36,7 @@ public class ShortFormAnnotator {
 				preferredPrefix = graph.config.get("id").toString().toUpperCase();
 			}
 
-			String shortForm = extractShortForm(graph, ontologyBaseUris, preferredPrefix, c.uri);
-          
-			/*
-			CURIEs are formed by following rules:
-			If there is only one underscore "_" AND the characters before the underscore are PreferredPrefix then replace the underscore with colon ":"
-			If there is only one underscore "_" AND the characters after the underscore are numbers then replace the underscore with colon ":"
-			If there is only one underscore "_" and the characters after the underscore are not just numbers then just keep the curie same as shortform
-			If there are multiple underscore but has only digits after the last underscore then the code replaces the last underscore with a colon
-			*/
-			String curie;
-			// Pattern for: single underscore, prefix matches preferredPrefix
-			String preferredPrefixPattern = "^(?:" + Pattern.quote(preferredPrefix) + ")_([^_]+)$";
-			// Pattern for: single underscore, suffix is all digits
-			String singleUnderscoreDigitsPattern = "^[^_]+_(\\d+)$";
-			// Pattern for: multiple underscores, suffix is all digits
-			String multipleUnderscoresDigitsPattern = "^(.*)_(\\d+)$";
-			if (shortForm.matches(preferredPrefixPattern)) {
-				curie = shortForm.replaceFirst("_", ":");
-			} else if (shortForm.matches(singleUnderscoreDigitsPattern)) {
-				curie = shortForm.replaceFirst("_", ":");
-			} else if (shortForm.matches(multipleUnderscoresDigitsPattern)) {
-				// Multiple underscores, suffix is digits
-				// Replace the last underscore with a colon
-				curie = shortForm.replaceFirst("_(?=\\d+$)", ":");
-			} else {
-				// No transformation needed
-				curie = shortForm;
-			}
-
-			c.properties.addProperty("shortForm", PropertyValueLiteral.fromString(shortForm));
+			String curie = extractCurie(graph, ontologyBaseUris, preferredPrefix, c.uri);
 			c.properties.addProperty("curie", PropertyValueLiteral.fromString(curie));
 		}
 	}
@@ -75,20 +46,16 @@ public class ShortFormAnnotator {
 
 	}
 	
-	private static String extractShortForm(OntologyGraph graph, Set<String> ontologyBaseUris, String preferredPrefix,
+	private static String extractCurie(OntologyGraph graph, Set<String> ontologyBaseUris, String preferredPrefix,
 			String uri) {
 
 		if (uri.startsWith("urn:")) {
 			return uri.substring(4);
 		}
 
-		// if(uri.startsWith("http://purl.obolibrary.org/obo/")) {
-		// return uri.substring("http://purl.obolibrary.org/obo/".length());
-		// }
-
 		for (String baseUri : ontologyBaseUris) {
 			if (uri.startsWith(baseUri) && preferredPrefix != null) {
-				return preferredPrefix + "_" + uri.substring(baseUri.length());
+				return preferredPrefix + ":" + uri.substring(baseUri.length());
 			}
 		}
 

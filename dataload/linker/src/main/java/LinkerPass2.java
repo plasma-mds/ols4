@@ -144,6 +144,8 @@ public class LinkerPass2 {
             Set<String> stringsInEntity = new HashSet<String>();
             String entityIri = null;
 
+            EntityDefinitionSet defOfThisEntity = pass1Result.iriToDefinitions.get(entityIri);
+
             while(jsonReader.peek() != JsonToken.END_OBJECT) {
 
                 String name = jsonReader.nextName();
@@ -153,17 +155,26 @@ public class LinkerPass2 {
                 if(name.equals("iri")) {
                     entityIri = jsonReader.nextString();
                     jsonWriter.value(entityIri);
-                } else if (name.equalsIgnoreCase("curie")) {
-                    processCurieObject(jsonReader, jsonWriter, pass1Result, entityIri);
-                } else if (name.equalsIgnoreCase("shortForm")) {
-                    processShortFormObject(jsonReader, jsonWriter, pass1Result, entityIri);
-                } else {
-                    CopyJsonGatheringStrings.copyJsonGatheringStrings(jsonReader, jsonWriter, stringsInEntity);
+                    continue;
                 }
+
+                if(name == "curie") {
+                    if(defOfThisEntity.definingDefinitions.size() > 0) {
+                        // always use the defining ontology's curie, as the defining
+                        // ontology knows the base URI and we might not
+                        //
+                        com.google.gson.internal.Streams.write(
+                        defOfThisEntity.definingDefinitions.iterator().next().curie,
+                        jsonWriter);
+                        continue;
+                    } else {
+                        // fallback to using the curie we already have
+                    }
+                }
+
+                CopyJsonGatheringStrings.copyJsonGatheringStrings(jsonReader, jsonWriter, stringsInEntity);
             }
 
-
-            EntityDefinitionSet defOfThisEntity = pass1Result.iriToDefinitions.get(entityIri);
             if(defOfThisEntity != null) {
 
                 jsonWriter.name(IS_DEFINING_ONTOLOGY.getText());
@@ -475,51 +486,5 @@ public class LinkerPass2 {
         jsonWriter.endArray();
         jsonWriter.name("value").value(shortFormObject.get("value").getAsString());
         jsonWriter.endObject();
-    }
-
-    private static void processCurieObject(JsonReader jsonReader, JsonWriter jsonWriter, LinkerPass1.LinkerPass1Result pass1Result, String entityIri) throws IOException {
-        jsonReader.beginObject();
-        JsonObject curieObject = new JsonObject();
-
-        while (jsonReader.peek() != JsonToken.END_OBJECT) {
-            String curieFieldName = jsonReader.nextName();
-            if (curieFieldName.equals("type")) {
-                JsonArray typeArray = new JsonArray();
-                jsonReader.beginArray();
-                while (jsonReader.peek() != JsonToken.END_ARRAY) {
-                    typeArray.add(jsonReader.nextString());
-                }
-                jsonReader.endArray();
-                curieObject.add("type", typeArray);
-            } else if (curieFieldName.equals("value")) {
-                String curieValue = jsonReader.nextString();
-                // Modify the value attribute
-                curieValue = getProcessedCurieValue(pass1Result, entityIri);
-                curieObject.addProperty("value", curieValue);
-            }
-        }
-        jsonReader.endObject();
-
-        // Write the modified curie object
-        jsonWriter.beginObject();
-        jsonWriter.name("type");
-        jsonWriter.beginArray();
-        for (JsonElement typeElement : curieObject.getAsJsonArray("type")) {
-            jsonWriter.value(typeElement.getAsString());
-        }
-        jsonWriter.endArray();
-        jsonWriter.name("value").value(curieObject.get("value").getAsString());
-        jsonWriter.endObject();
-    }
-
-    private static String getProcessedCurieValue(LinkerPass1.LinkerPass1Result pass1Result, String entityIri) {
-        var def = pass1Result.iriToDefinitions.get(entityIri);
-        if (def.definitions.iterator().hasNext()) {
-            JsonObject defCurieObject = def.definitions.iterator().next().curie.getAsJsonObject();
-            if (defCurieObject.has("value")) {
-                return defCurieObject.get("value").getAsString();
-            }
-        }
-        return "";
     }
 }
