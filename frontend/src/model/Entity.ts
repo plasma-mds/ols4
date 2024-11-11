@@ -68,6 +68,14 @@ export default abstract class Entity extends Thing {
     return Reified.fromJson<any>(this.properties["synonym"]);
   }
 
+  getExactSynonyms(): Reified<any>[] {
+    return Reified.fromJson<any>(this.extractExactMatchSynonyms()) || [];
+  }
+
+  getCloseMatchSynonyms(): Reified<any>[] {
+    return Reified.fromJson<any>(this.extractCloseMatchSynonyms()) || [];
+  }
+
   getAppearsIn(): string[] {
     return (this.properties["appearsIn"] || []) as string[];
   }
@@ -188,5 +196,41 @@ export default abstract class Entity extends Thing {
         return p.getMetadata();
       }
     }
+  }
+
+
+  extractExactMatchSynonyms(): string[] {
+    let result = []
+
+    if(this.properties["synonymProperty"]) {
+      let synonymProperties = this.properties["synonymProperty"];
+      if (!Array.isArray(synonymProperties)) {
+        synonymProperties = [synonymProperties];
+      }
+      synonymProperties.map((synonymProperty: string) => {
+        if (synonymProperty === "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym" ||
+            synonymProperty === "http://www.geneontology.org/formats/oboInOwl#hasSynonym") {
+          result = result.concat(this.properties[synonymProperty]) || [];
+        }
+      })
+    }
+    return result || [];
+  }
+
+  extractCloseMatchSynonyms(): string[] {
+    let result = []
+    if(this.properties["synonymProperty"]) {
+      let synonymProperties = this.properties["synonymProperty"];
+      if (!Array.isArray(synonymProperties)) {
+        synonymProperties = [synonymProperties];
+      }
+      synonymProperties.map((synonymProperty: string) => {
+        if (synonymProperty !== "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym" &&
+            synonymProperty !== "http://www.geneontology.org/formats/oboInOwl#hasSynonym") {
+          result = result.concat(this.properties[synonymProperty]) || [];
+        }
+      })
+    }
+    return result || [];
   }
 }
