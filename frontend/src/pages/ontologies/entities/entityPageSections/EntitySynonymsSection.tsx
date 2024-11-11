@@ -13,10 +13,14 @@ export default function EntitySynonymsSection({
   linkedEntities: LinkedEntities;
 }) {
   let exactSynonyms = entity.getExactSynonyms();
+  let relatedSynonyms = entity.getRelatedSynonyms();
+  let narrowSynonyms = entity.getNarrowSynonyms();
+  let broadSynonyms = entity.getBroadSynonyms();
 
-  let closeMatchSynonyms = entity.getCloseMatchSynonyms();
-
-  if ((!exactSynonyms || exactSynonyms.length === 0) && (!closeMatchSynonyms || closeMatchSynonyms.length === 0)) {
+  if ((!exactSynonyms || exactSynonyms.length === 0) &&
+      (!relatedSynonyms || relatedSynonyms.length === 0) &&
+      (!narrowSynonyms || narrowSynonyms.length === 0) &&
+      (!broadSynonyms || broadSynonyms.length === 0)) {
     return <Fragment />;
   }
 
@@ -47,10 +51,60 @@ export default function EntitySynonymsSection({
             </div>
         )}
 
-        {closeMatchSynonyms && closeMatchSynonyms.length > 0 && (
+        {relatedSynonyms && relatedSynonyms.length > 0 && (
             <div className="flex flex-row flex-wrap items-center mb-2">
-              <div className="font-bold mr-2">CloseMatch Synonyms</div>
-              {closeMatchSynonyms
+              <div className="font-bold mr-2">Related Synonyms</div>
+              {relatedSynonyms
+                  .map((synonym: Reified<any>) => {
+                    const hasMetadata = synonym.hasMetadata();
+                    return (
+                        <div
+                            key={synonym.value.toString().toUpperCase() + randomString()}
+                            className="bg-grey-default rounded-sm font-mono py-1 px-3 mr-2 my-1 text-sm"
+                        >
+                          {synonym.value}
+                          {hasMetadata && (
+                              <MetadataTooltip
+                                  metadata={synonym.getMetadata()}
+                                  linkedEntities={linkedEntities}
+                              />
+                          )}
+                        </div>
+                    );
+                  })
+                  .sort((a, b) => sortByKeys(a, b))}
+            </div>
+        )}
+
+        {narrowSynonyms && narrowSynonyms.length > 0 && (
+            <div className="flex flex-row flex-wrap items-center mb-2">
+              <div className="font-bold mr-2">Narrow Synonyms</div>
+              {narrowSynonyms
+                  .map((synonym: Reified<any>) => {
+                    const hasMetadata = synonym.hasMetadata();
+                    return (
+                        <div
+                            key={synonym.value.toString().toUpperCase() + randomString()}
+                            className="bg-grey-default rounded-sm font-mono py-1 px-3 mr-2 my-1 text-sm"
+                        >
+                          {synonym.value}
+                          {hasMetadata && (
+                              <MetadataTooltip
+                                  metadata={synonym.getMetadata()}
+                                  linkedEntities={linkedEntities}
+                              />
+                          )}
+                        </div>
+                    );
+                  })
+                  .sort((a, b) => sortByKeys(a, b))}
+            </div>
+        )}
+
+        {broadSynonyms && broadSynonyms.length > 0 && (
+            <div className="flex flex-row flex-wrap items-center mb-2">
+              <div className="font-bold mr-2">Broad Synonyms</div>
+              {broadSynonyms
                   .map((synonym: Reified<any>) => {
                     const hasMetadata = synonym.hasMetadata();
                     return (

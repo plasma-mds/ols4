@@ -72,8 +72,16 @@ export default abstract class Entity extends Thing {
     return Reified.fromJson<any>(this.extractExactMatchSynonyms()) || [];
   }
 
-  getCloseMatchSynonyms(): Reified<any>[] {
-    return Reified.fromJson<any>(this.extractCloseMatchSynonyms()) || [];
+  getRelatedSynonyms(): Reified<any>[] {
+    return Reified.fromJson<any>(this.extractSynonyms("http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym")) || [];
+  }
+
+  getBroadSynonyms(): Reified<any>[] {
+    return Reified.fromJson<any>(this.extractSynonyms("http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym")) || [];
+  }
+
+  getNarrowSynonyms(): Reified<any>[] {
+    return Reified.fromJson<any>(this.extractSynonyms("http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym")) || [];
   }
 
   getAppearsIn(): string[] {
@@ -217,7 +225,7 @@ export default abstract class Entity extends Thing {
     return result || [];
   }
 
-  extractCloseMatchSynonyms(): string[] {
+  extractSynonyms(synonymType: string): string[] {
     let result = []
     if(this.properties["synonymProperty"]) {
       let synonymProperties = this.properties["synonymProperty"];
@@ -225,8 +233,7 @@ export default abstract class Entity extends Thing {
         synonymProperties = [synonymProperties];
       }
       synonymProperties.map((synonymProperty: string) => {
-        if (synonymProperty !== "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym" &&
-            synonymProperty !== "http://www.geneontology.org/formats/oboInOwl#hasSynonym") {
+        if (synonymProperty === synonymType) {
           result = result.concat(this.properties[synonymProperty]) || [];
         }
       })
