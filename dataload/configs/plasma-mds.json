@@ -2,9 +2,9 @@
   "ontologies": [
     {
       "id": "plasma-o",
-      "preferredPrefix": "plo",
+      "preferredPrefix": "plasma-o",
       "title": "Plasma Ontology",
-      "uri": "https://www.plasma-mds.org/plasma-o/",
+      "uri": "https://www.plasma-mds.org/ontology/plasma-o/",
       "description": "The plasma ontology (Plasma-O) supports the standardized documentation of research data in the field of plasma physics. In accordance with typical plasma processes and applications, the ontology contains terminologicial knowledge about plasma source, plasma medium, and plasma target. Furthermore, metadata for the respectively applied diagnostic and modelling/simulation methods are represented.",
       "definition_property": [
         "http://www.w3.org/2000/01/rdf-schema#comment"
