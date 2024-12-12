@@ -19,7 +19,7 @@
         "http://www.w3.org/2000/01/rdf-schema#label"
       ],
       "base_uri": [
-        "https://www.plasma-mds.org/plasma-o"
+        "https://plasma-mds.org/ontology/plasma-o"
       ],
       "ontology_purl": "https://raw.githubusercontent.com/plasma-mds/plasma-ontology/refs/heads/master/plasma-ontology.ttl"
     }
