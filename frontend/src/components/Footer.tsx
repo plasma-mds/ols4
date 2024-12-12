@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="flex flex-row gap-4 h-6 items-center">
         <span>
           <i className="icon icon-common icon-copyright icon-spacer" />
-          Powered by INP Greifswald&nbsp;2024
+          INP&nbsp;2024
         </span>
         <a
           href="https://www.plasma-mds.org/policy.html"
@@ -41,7 +41,7 @@ export default function Footer() {
         >
           Privacy Policy
         </a>
-        &#44;&nbsp;
+        &nbsp;
         <a
           href="https://www.plasma-mds.org/legal.html"
           className="link-footer"
