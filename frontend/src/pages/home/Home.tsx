@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-8">
               <div className="px-2">
                 <div className="text-2xl mb-3 text-neutral-default">
                   <i className="icon icon-common icon-browse icon-spacer text-yellow-default" />
@@ -110,10 +110,10 @@ export default function Home() {
                 </div>
                 <p>
                   The Ontology Lookup Service (OLS) is a repository for
-                  biomedical ontologies that aims to provide a single point of
+                  ontologies that aims to provide a single point of
                   access to the latest ontology versions. You can browse the
                   ontologies through the website as well as programmatically via
-                  the OLS API. OLS is developed and maintained by the&thinsp;
+                  the OLS API. The OLS software is developed and maintained by the&thinsp;
                   <a
                     className="link-default"
                     href={process.env.REACT_APP_SPOT_HOME}
@@ -132,78 +132,17 @@ export default function Home() {
                     EMBL-EBI
                   </a>
                   .
-                </p>
-              </div>
-              <div className="px-2">
-                <div className="text-2xl mb-3 text-neutral-default">
-                  <i className="icon icon-common icon-tool icon-spacer text-yellow-default" />
+                  This OLS instance is currently maintained by the 
+                  research programme Smart Data Technologies at the
                   <a
-                    href={process.env.REACT_APP_SPOT_ONTOTOOLS}
                     className="link-default"
+                    href="https://www.inp-greifswald.de"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Related Tools
+                  Leibniz Institute for Plasma Science and Technology (INP)
                   </a>
-                </div>
-                <p>
-                  In addition to OLS the SPOT team also provides the&thinsp;
-                  <a
-                    className="link-default"
-                    href={process.env.REACT_APP_SPOT_OXO}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    OxO
-                  </a>&thinsp;
-                  and&thinsp;
-                  <a
-                    className="link-default"
-                    href={process.env.REACT_APP_SPOT_ZOOMA}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    ZOOMA
-                  </a>&thinsp;
-                  services. OxO provides cross-ontology mappings between terms
-                  from different ontologies. ZOOMA is a service to assist in
-                  mapping data to ontologies in OLS.
-                </p>
-              </div>
-              <div className="px-2">
-                <div className="text-2xl mb-3 text-neutral-default">
-                  <i className="icon icon-common icon-exclamation-triangle icon-spacer text-yellow-default" />
-                  <a
-                    href={`${process.env.REACT_APP_SPOT_OLS4_REPO}/issues`}
-                    className="link-default"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Report an Issue
-                  </a>
-                </div>
-                <p>
-                  For feedback, enquiries or suggestion about OLS or to request
-                  a new ontology please use our&thinsp;
-                  <a
-                    href={`${process.env.REACT_APP_SPOT_OLS4_REPO}/issues`}
-                    className="link-default"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    GitHub issue tracker
-                  </a>
-                  . For announcements relating to OLS, such as new releases and
-                  new features sign up to the&thinsp;
-                  <a
-                    className="link-default"
-                    href={process.env.REACT_APP_SPOT_OLS_ANNOUNCE}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    OLS announce mailing list
-                  </a>
-                  .
+                  in Greifswald, Germany.
                 </p>
               </div>
             </div>
