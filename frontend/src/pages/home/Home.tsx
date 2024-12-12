@@ -84,12 +84,16 @@ export default function Home() {
                 <div className="text-neutral-black">
                   <span>
                     Examples:&nbsp;
-                    <Link to={"/search?q=diabetes"} className="link-default">
-                      diabetes
+                    <Link to={"/search?q=source"} className="link-default">
+                      source
                     </Link>
                     &#44;&nbsp;
-                    <Link to={"/search?q=GO:0098743"} className="link-default">
-                      GO:0098743
+                    <Link to={"/search?q=medium"} className="link-default">
+                      medium
+                    </Link>
+                    &#44;&nbsp;
+                    <Link to={"/search?q=target"} className="link-default">
+                      target
                     </Link>
                   </span>
                 </div>
