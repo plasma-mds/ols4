@@ -137,7 +137,7 @@ export default function Home() {
                   </a>
                   .
                   This OLS instance is currently maintained by the 
-                  research programme Smart Data Technologies at the
+                  research programme Smart Data Technologies at the&thinsp;
                   <a
                     className="link-default"
                     href="https://www.inp-greifswald.de"
@@ -145,7 +145,7 @@ export default function Home() {
                     target="_blank"
                   >
                   Leibniz Institute for Plasma Science and Technology (INP)
-                  </a>
+                  </a>&thinsp;
                   in Greifswald, Germany.
                 </p>
               </div>
