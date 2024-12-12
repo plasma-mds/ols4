@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="mb-2 text-xs uppercase font-bold">Follow us</div>
           <div className="flex gap-3">
             <a
-              href={process.env.REACT_APP_SPOT_OLS4_REPO}
+              href="https://github.com/plasma-mds/ols4"
               className="link-footer text-xs font-bold self-center"
               title="GitHub"
               rel="noopener noreferrer"
@@ -17,7 +17,7 @@ export default function Footer() {
               <GitHub />
             </a>
             <a
-              href="https://twitter.com/EBIOLS"
+              href="https://x.com/INPGreifswald"
               className="link-footer text-2xl font-bold hover:no-underline"
               title="X"
               rel="noopener noreferrer"
@@ -31,15 +31,24 @@ export default function Footer() {
       <div className="flex flex-row gap-4 h-6 items-center">
         <span>
           <i className="icon icon-common icon-copyright icon-spacer" />
-          EMBL-EBI&nbsp;2023
+          Powered by INP Greifswald&nbsp;2024
         </span>
         <a
-          href={process.env.REACT_APP_EBI_LICENSING}
+          href="https://www.plasma-mds.org/policy.html"
           className="link-footer"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Licensing
+          Privacy Policy
+        </a>
+        &#44;&nbsp;
+        <a
+          href="https://www.plasma-mds.org/legal.html"
+          className="link-footer"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Legal Notice
         </a>
       </div>
     </footer>
