@@ -59,7 +59,7 @@ export default function Header({ section }: { section?: string }) {
                 Ontologies
               </li>
             </Link>
-            <Link to={`/help`}>
+            <Link to={`https://www.ebi.ac.uk/ols4/help`}>
               <li
                 role="menuitem"
                 className={`px-4 py-3  ${
@@ -69,30 +69,6 @@ export default function Header({ section }: { section?: string }) {
                 }`}
               >
                 Help
-              </li>
-            </Link>
-            <Link to={`/about`}>
-              <li
-                role="menuitem"
-                className={`px-4 py-3 ${
-                  section === "about"
-                    ? " bg-opacity-75 bg-neutral-500"
-                    : "hover:bg-opacity-50 hover:bg-neutral-500"
-                }`}
-              >
-                About
-              </li>
-            </Link>
-            <Link to={`/downloads`}>
-              <li
-                role="menuitem"
-                className={`rounded-r-md px-4 py-3 ${
-                  section === "downloads"
-                    ? " bg-opacity-75 bg-neutral-500"
-                    : "hover:bg-opacity-50 hover:bg-neutral-500"
-                }`}
-              >
-                Downloads
               </li>
             </Link>
           </ul>
