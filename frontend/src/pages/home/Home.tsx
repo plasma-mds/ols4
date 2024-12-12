@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
               <div className="px-2">
                 <div className="text-2xl mb-3 text-neutral-default">
                   <i className="icon icon-common icon-browse icon-spacer text-yellow-default" />
@@ -134,7 +134,6 @@ export default function Home() {
                   .
                 </p>
               </div>
-<!--
               <div className="px-2">
                 <div className="text-2xl mb-3 text-neutral-default">
                   <i className="icon icon-common icon-tool icon-spacer text-yellow-default" />
@@ -207,7 +206,6 @@ export default function Home() {
                   .
                 </p>
               </div>
--->
             </div>
           </div>
           <div className="lg:col-span-1 lg:order-none order-first">
