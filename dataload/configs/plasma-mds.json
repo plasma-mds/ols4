@@ -1,7 +1,7 @@
 {
   "ontologies": [
     {
-      "id": "plasma-o",
+      "id": "plsmo",
       "preferredPrefix": "plsmo",
       "title": "Plasma Ontology",
       "uri": "https://plasma-mds.org/ontology/plasma-o/",
