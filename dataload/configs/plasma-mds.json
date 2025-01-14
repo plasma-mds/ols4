@@ -21,7 +21,7 @@
       "base_uri": [
         "https://plasma-mds.org/ontology/plasma-o/PLSMO_"
       ],
-      "ontology_purl": "https://raw.githubusercontent.com/markus-m-becker/onto-test/refs/heads/main/plsmo6.ttl"
+      "ontology_purl": "https://raw.githubusercontent.com/plasma-mds/plasma-ontology/refs/heads/master/plasma-ontology.ttl"
     }
   ]
 }
