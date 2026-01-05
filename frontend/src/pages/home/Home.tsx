@@ -76,7 +76,7 @@ export default function Home() {
           <div className="lg:col-span-3">
             <div className="bg-gradient-to-r from-neutral-light to-white rounded-lg my-8 p-8">
               <div className="text-3xl mb-4 text-neutral-black font-bold">
-                Welcome to the EMBL-EBI Ontology Lookup Service
+                Welcome to the Plasma-MDS Ontology Lookup Service
               </div>
               <div className="flex flex-nowrap gap-4 mb-4">
                 <SearchBox />
@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-8">
               <div className="px-2">
                 <div className="text-2xl mb-3 text-neutral-default">
                   <i className="icon icon-common icon-browse icon-spacer text-yellow-default" />
@@ -111,10 +111,10 @@ export default function Home() {
                 </div>
                 <p>
                   The Ontology Lookup Service (OLS) is a repository for
-                  biomedical ontologies that aims to provide a single point of
+                  ontologies that aims to provide a single point of
                   access to the latest ontology versions. You can browse the
                   ontologies through the website as well as programmatically via
-                  the OLS API. OLS is developed and maintained by the&thinsp;
+                  the OLS API. The OLS software is developed and maintained by the&thinsp;
                   <a
                     className="link-default"
                     href={process.env.REACT_APP_SPOT_HOME}
@@ -133,6 +133,17 @@ export default function Home() {
                     EMBL-EBI
                   </a>
                   .
+                  This OLS instance is currently maintained by the 
+                  research programme Smart Data Technologies at the&thinsp;
+                  <a
+                    className="link-default"
+                    href="https://www.inp-greifswald.de"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                  Leibniz Institute for Plasma Science and Technology (INP)
+                  </a>&thinsp;
+                  in Greifswald, Germany.
                 </p>
               </div>
               <div className="px-2">
